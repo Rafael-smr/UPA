@@ -44,7 +44,7 @@ def formulario_medico():
         prescricao = request.form['prescricao']
 
         if fila_preferencial:
-            senha_atual = fila_preferencial.pop(0)
+            senha_atual = fila_preferencial.pop()
         elif fila_normal:
             senha_atual = fila_normal.pop(0)
         else:
