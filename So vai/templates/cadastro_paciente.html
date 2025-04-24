@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fila UBS-UDF</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/">Início</a>
+    <a href="/cadastro">Cadastrar Paciente</a>
+    <a href="/medico">Formulário Médico</a>
+  </nav>
+
+  <div class="container">
+    <h1>UBS-UDF - Cadastro de Atendimento</h1>
+
+    {% if erro %}
+      <p style="color:red; font-weight:bold;">{{ erro }}</p>
+    {% endif %}
+
+    <label for="tipo">Tipo de Atendimento:</label>
+    <select id="tipo">
+      <option value="Clinico Geral">1 - Clínico Geral</option>
+      <option value="Ginecologia">2 - Ginecologia</option>
+      <option value="Pediatria">3 - Pediatria</option>
+      <option value="Geriatria">4 - Geriatria</option>
+      <option value="Ortopedia">5 - Ortopedia</option>
+    </select>
+
+    <label for="preferencial">Você é preferencial?</label>
+    <select id="preferencial">
+      <option value="s">Sim</option>
+      <option value="n">Não</option>
+    </select>
+
+    <button onclick="adicionarFila()">Adicionar à fila</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

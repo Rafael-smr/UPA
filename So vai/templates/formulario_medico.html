@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulário Médico</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Formulário do Médico</h1>
+
+  {% if senha_atual %}
+    <h2>Atendendo senha: {{ senha_atual }}</h2>
+  {% endif %}
+
+  <form method="POST">
+    <label>Nome:</label><br>
+    <input type="text" name="nome" required><br><br>
+
+    <label>CPF:</label><br>
+    <input type="text" name="cpf" required><br><br>
+
+    <label>Nº do SUS:</label><br>
+    <input type="text" name="sus" required><br><br>
+
+    <label>Sintomas:</label><br>
+    <textarea name="sintomas" required></textarea><br><br>
+
+    <label>Prescrição:</label><br>
+    <textarea name="prescricao" required></textarea><br><br>
+
+    <button type="submit">Chamar Próximo Paciente</button>
+  </form>
+
+  <a href="/">Voltar para senhas</a>
+</body>
+</html>

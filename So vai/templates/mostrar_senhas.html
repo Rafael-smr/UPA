@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Senhas Chamadas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/">Início</a>
+    <a href="/cadastro">Cadastrar Paciente</a>
+    <a href="/medico">Formulário Médico</a>
+  </nav>
+
+  <div class="container">
+    <h1>Atendimento Atual</h1>
+    <h2>{{ senha_atual if senha_atual else 'Nenhuma senha chamada ainda' }}</h2>
+
+    <h3>Histórico de Senhas:</h3>
+    <ul>
+      {% for senha in historico %}
+        <li>{{ senha }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
